@@ -27,7 +27,7 @@ pipeline {
                  withCredentials([string(credentialsId: 'devopshintdocker', variable: 'devopshintdocker')]) {
                     sh 'docker login -u hinaar -p ${devopshintdocker}'
             }
-            sh 'docker push devopshint/node-app-1.0'
+            sh 'docker push hinaar/node-app-1.0'
         }
             }   
         }
