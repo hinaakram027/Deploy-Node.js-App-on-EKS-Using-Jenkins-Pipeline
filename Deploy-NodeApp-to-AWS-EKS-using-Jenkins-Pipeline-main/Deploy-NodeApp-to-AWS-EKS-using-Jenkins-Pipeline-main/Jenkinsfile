@@ -41,7 +41,7 @@ pipeline {
      stage('Deploying Node App to Kubernetes') {
       steps {
         script {
-          sh ('aws eks update-kubeconfig --name sample --region us-east-2')
+          sh ('aws eks update-kubeconfig --name jenkins-project --region us-east-2')
           sh "kubectl get ns"
           sh "kubectl apply -f nodejsapp.yaml"
         }
