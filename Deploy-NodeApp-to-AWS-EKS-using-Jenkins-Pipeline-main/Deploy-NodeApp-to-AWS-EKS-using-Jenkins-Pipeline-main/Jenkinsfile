@@ -10,18 +10,12 @@ pipeline {
                     checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB_CREDENTIALS', url: 'https://github.com/hinaakram027/Deploy-Node.js-App-on-EKS-Using-Jenkins-Pipeline']])
                 }
             }
-        }
-     
-    stage('Node JS Build') {
-      steps {
-        sh 'npm install'
-      }
-    }
+         }
   
      stage('Build Node JS Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t devopshint/node-app-1.0 .'
+                  sh 'docker build -t hinaar/node-app-1.0 .'
                 }
             }
         }
